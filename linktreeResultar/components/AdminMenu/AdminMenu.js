@@ -131,6 +131,15 @@ const Header = ({ file_path }) => {
 							>
 								Main page
 							</MenuItem>
+							<MenuItem
+								icon={<BsPersonFill />}
+								onClick={() => {
+									window.location.href = "/dashboard/change";
+								}}
+							>
+								Change
+							</MenuItem>
+
 							{isAdmin ? (
 								<MenuItem
 									icon={<BsPersonFill />}

@@ -46,11 +46,6 @@ func createUpdateCards(c *gin.Context) {
 		return
 	}
 
-	if len(data.Cards) == 0 {
-		c.JSON(400, gin.H{"message": "Bad Request"})
-		return
-	}
-
 	data.UserID = objectID
 	ctx := context.Background()
 

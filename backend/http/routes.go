@@ -70,10 +70,11 @@ func InitServer(port string, db *db.Db) {
 	{
 		routes.GET("/verify", verify)
 		routes.GET("/list-users", listUsers)
+		routes.GET("/get-me", getMe)
 		routes.GET("/is-admin", isAdmin)
 		routes.POST("/update-user/:id", UpdateUserAsAdmin)
-
-
+		routes.POST("/change-user", changeUser)
+		routes.POST("/change-password/:username", changePassword)
 
 		routes.POST("/create-logo", createImage)
 		routes.POST("/create-linktree", createLinksData)

@@ -1,11 +1,20 @@
 import api from "../../services/api";
 import AdminMenu from "../../components/AdminMenu/AdminMenu";
+import { useEffect, useState } from "react";
 
 function Dashboard(props) {
+	const [user, setUser] = useState("");
+
+	useEffect(() => {
+		setUser(localStorage.getItem("username"));
+	}, []);
+
 	return (
 		<div className={"dashboard"}>
 			<AdminMenu file_path={props.file_path} />
-			<div style={{ textAlign: "center", fontSize: "5rem" }}>Welcome</div>
+			<div style={{ textAlign: "center", fontSize: "5rem" }}>
+				Welcome {user}
+			</div>
 		</div>
 	);
 }
